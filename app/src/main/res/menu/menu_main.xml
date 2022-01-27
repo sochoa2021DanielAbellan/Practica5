@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_ordenar"
+        android:icon="@android:drawable/ic_menu_sort_alphabetically"
+        android:title=""
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_valoravida"
+        android:title="@string/menuValora" />
+    <item
+        android:id="@+id/action_fechas"
+        android:title="@string/menuFechas" />
+    <item
+        android:id="@+id/action_setting"
+        android:title="@string/menuSetting" />
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/menuAbout" />
+</menu>

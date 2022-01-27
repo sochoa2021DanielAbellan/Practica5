@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Practica5PMDM</string>
+    <string name="app_name">Práctica 5</string>
+    <string name="menuValora">Valora vida</string>
+    <string name="menuFechas">Mostrar entre fechas</string>
+    <string name="menuSetting">Configurar</string>
+    <string name="menuAbout">Acerca de...</string>
+    <string name="rbAscendente">Asc</string>
+    <string name="rbDescendente">Desc</string>
 </resources>
