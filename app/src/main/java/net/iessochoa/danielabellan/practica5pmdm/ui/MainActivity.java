@@ -1,10 +1,12 @@
-package net.iessochoa.danielabellan.practica5pmdm;
+package net.iessochoa.danielabellan.practica5pmdm.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.Menu;
+
+import net.iessochoa.danielabellan.practica5pmdm.R;
 
 public class MainActivity extends AppCompatActivity {
 
