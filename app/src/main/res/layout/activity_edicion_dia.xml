@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.EdicionDiaActivity">
+
+    <TextView
+        android:id="@+id/tvFechaElegida"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:text="@string/tvFechaElegida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSeleccionFecha"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="62dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-15dp"
+        app:icon="@android:drawable/ic_input_get"
+        app:iconTint="@color/purple_200"
+        app:layout_constraintStart_toEndOf="@+id/tvFechaElegida"
+        app:layout_constraintTop_toTopOf="@+id/tvFechaElegida" />
+
+    <EditText
+        android:id="@+id/etResumenBreveDia"
+        android:layout_width="210dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="-30dp"
+        android:layout_marginEnd="5dp"
+        android:ems="10"
+        android:hint="@string/etResumenBreveDia"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSeleccionFecha"
+        app:layout_constraintTop_toBottomOf="@+id/tvFechaElegida" />
+
+    <TextView
+        android:id="@+id/tvValoracionDia"
+        android:layout_width="155dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/tvValoracionDia"
+        app:layout_constraintStart_toStartOf="@+id/tvFechaElegida"
+        app:layout_constraintTop_toBottomOf="@+id/btnSeleccionFecha" />
+
+    <Spinner
+        android:id="@+id/spValoracionDia"
+        android:layout_width="93dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="-5dp"
+        android:entries="@array/spValoracionDia"
+        app:layout_constraintStart_toEndOf="@+id/tvValoracionDia"
+        app:layout_constraintTop_toTopOf="@+id/tvValoracionDia" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etResumenDia"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:hint="@string/etResumenDia"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabGuardarNuevoDia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+</androidx.constraintlayout.widget.ConstraintLayout>

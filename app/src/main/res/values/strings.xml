@@ -6,4 +6,20 @@
     <string name="menuAbout">Acerca de...</string>
     <string name="rbAscendente">Asc</string>
     <string name="rbDescendente">Desc</string>
+    <string name="tvFechaElegida">00/00/00</string>
+    <string name="etResumenBreveDia">Resumen breve del día...</string>
+    <string name="tvValoracionDia">¿Cómo valorarías el dia?</string>
+    <string-array name="spValoracionDia">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string name="etResumenDia">Escribe aquí un resumen breve del día...</string>
 </resources>
