@@ -4,12 +4,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.BaseColumns;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
+
 import java.sql.Date;
 import java.text.DateFormat;
 import java.util.Locale;
 
+@Entity(tableName = DiaDiario.NOMBRE_TABLA, indices = {@Index(value = {DiaDiario.FECHA}, unique = true)})
 public class DiaDiario implements Parcelable {
-    public static final String NOMBRE_TABLA = "diario";
+    public static final String NOMBRE_TABLA = "diaDiario";
     public static final String ID = BaseColumns._ID;
     public static final String FECHA = "fecha";
     public static final String VALORACION_DIA = "valoracion_dia";
@@ -17,11 +25,24 @@ public class DiaDiario implements Parcelable {
     public static final String CONTENIDO = "contenido";
     public static final String FOTO_URI = "foto_uri";
 
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(name = ID)
     private int id;
+
+    @ColumnInfo(name = FECHA)
     private Date fecha;
+
+    @ColumnInfo(name = VALORACION_DIA)
     private int valoracionDia;
+
+    @ColumnInfo(name = RESUMEN)
     private String resumen;
+
+    @ColumnInfo(name = CONTENIDO)
     private String contenido;
+
+    @ColumnInfo(name = FOTO_URI)
     private String fotoUri;
 
     /*
@@ -38,6 +59,8 @@ public class DiaDiario implements Parcelable {
     /*
     * Constructor de DiaDiario con todos los parámetros menos el ID
     */
+    //TODO: Cambiar posteriormente (quizás)
+    @Ignore
     public DiaDiario(Date fecha, int valoracionDia, String resumen, String contenido, String fotoUri){
         this(fecha, valoracionDia, resumen, contenido);
         this.fotoUri = fotoUri;
@@ -89,46 +112,6 @@ public class DiaDiario implements Parcelable {
         DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault());
         return df.format(fechaParametro);
     }
-
-
-    //Serie de métodos generados mediante la implementación de Parcelable
-
-    protected DiaDiario(Parcel in) {
-        id = in.readInt();
-        valoracionDia = in.readInt();
-        resumen = in.readString();
-        contenido = in.readString();
-        fotoUri = in.readString();
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
-        dest.writeInt(valoracionDia);
-        dest.writeString(resumen);
-        dest.writeString(contenido);
-        dest.writeString(fotoUri);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<DiaDiario> CREATOR = new Creator<DiaDiario>() {
-        @Override
-        public DiaDiario createFromParcel(Parcel in) {
-            return new DiaDiario(in);
-        }
-
-        @Override
-        public DiaDiario[] newArray(int size) {
-            return new DiaDiario[size];
-        }
-    };
-
-    //Fin de la serie de métodos generados mediante la implementación de Parcelable
-
 
     /*
     * Método que devuelve el campo "id" de un DiaDiario
@@ -213,4 +196,42 @@ public class DiaDiario implements Parcelable {
     public void setFotoUri(String fotoUri) {
         this.fotoUri = fotoUri;
     }
+
+    //Serie de métodos generados mediante la implementación de Parcelable
+
+    protected DiaDiario(Parcel in) {
+        id = in.readInt();
+        valoracionDia = in.readInt();
+        resumen = in.readString();
+        contenido = in.readString();
+        fotoUri = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeInt(valoracionDia);
+        dest.writeString(resumen);
+        dest.writeString(contenido);
+        dest.writeString(fotoUri);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<DiaDiario> CREATOR = new Creator<DiaDiario>() {
+        @Override
+        public DiaDiario createFromParcel(Parcel in) {
+            return new DiaDiario(in);
+        }
+
+        @Override
+        public DiaDiario[] newArray(int size) {
+            return new DiaDiario[size];
+        }
+    };
+
+    //Fin de la serie de métodos generados mediante la implementación de Parcelable
 }
