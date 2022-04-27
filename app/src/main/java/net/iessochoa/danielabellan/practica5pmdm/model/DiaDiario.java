@@ -11,7 +11,7 @@ import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-import java.sql.Date;
+import java.util.Date;
 import java.text.DateFormat;
 import java.util.Locale;
 
